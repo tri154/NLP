@@ -291,7 +291,7 @@ def lstm():
     epochs = 10
     lr = 1e-3
     criterion = nn.CrossEntropyLoss()
-    model = LSTM_model(len(vocab), emb_size, emb_size)
+    model = LSTM_model(len(vocab), emb_size, emb_size).to(device)
     optimizer = AdamW(model.parameters(), lr)
 
     for epoch in range(epochs):
